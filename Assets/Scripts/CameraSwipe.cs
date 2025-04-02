@@ -12,29 +12,55 @@ public class CameraSwipe : MonoBehaviour
 
     void Update()
     {
+        // Handle touch input
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
+            HandleSwipe(touch.phase, touch.position);
+        }
 
-            if (touch.phase == TouchPhase.Began)
-            {
-                startTouchPosition = touch.position;
-                isSwiping = true;
-            }
-            else if (touch.phase == TouchPhase.Moved && isSwiping)
-            {
-                currentTouchPosition = touch.position;
-                float difference = (startTouchPosition.x - currentTouchPosition.x) * swipeSpeed;
-                
-                float newX = Mathf.Clamp(transform.position.x + difference, leftLimit, rightLimit);
-                transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+        // Handle mouse input (for testing on a laptop)
+        if (Input.GetMouseButtonDown(0)) // Left mouse button pressed
+        {
+            startTouchPosition = Input.mousePosition;
+            isSwiping = true;
+        }
+        else if (Input.GetMouseButton(0) && isSwiping) // Mouse drag
+        {
+            currentTouchPosition = (Vector2)Input.mousePosition;
+            float difference = (startTouchPosition.x - currentTouchPosition.x) * swipeSpeed;
+            
+            float newX = Mathf.Clamp(transform.position.x + difference, leftLimit, rightLimit);
+            transform.position = new Vector3(newX, transform.position.y, transform.position.z);
 
-                startTouchPosition = currentTouchPosition;
-            }
-            else if (touch.phase == TouchPhase.Ended)
-            {
-                isSwiping = false;
-            }
+            startTouchPosition = currentTouchPosition;
+        }
+        else if (Input.GetMouseButtonUp(0)) // Mouse button released
+        {
+            isSwiping = false;
+        }
+    }
+
+    private void HandleSwipe(TouchPhase phase, Vector2 position)
+    {
+        if (phase == TouchPhase.Began)
+        {
+            startTouchPosition = position;
+            isSwiping = true;
+        }
+        else if (phase == TouchPhase.Moved && isSwiping)
+        {
+            currentTouchPosition = position;
+            float difference = (startTouchPosition.x - currentTouchPosition.x) * swipeSpeed;
+            
+            float newX = Mathf.Clamp(transform.position.x + difference, leftLimit, rightLimit);
+            transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+
+            startTouchPosition = currentTouchPosition;
+        }
+        else if (phase == TouchPhase.Ended)
+        {
+            isSwiping = false;
         }
     }
 }
