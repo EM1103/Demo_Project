@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: f40c4fb509c10f542b804b4f581e6a45
+guid: 1570accfcb9be9e40965f0958006181d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -885321726135238226
-    second: background_near_0
-  - first:
-      213: 2769267293693170736
-    second: background_near_1
-  - first:
-      213: -2074770525565409213
-    second: background_near_2
-  - first:
-      213: 9057119044925362557
-    second: background_near_3
-  - first:
-      213: -3386929479945086501
-    second: background_near_4
+      213: 1597155040403415980
+    second: Brick_Platform_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,111 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_near_0
+      name: Brick_Platform_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2560
-        height: 720
+        width: 512
+        height: 144
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea106c9a494b6b3f0800000000000000
-      internalID: -885321726135238226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_near_1
-      rect:
-        serializedVersion: 2
-        x: 577
-        y: 0
-        width: 705
-        height: 441
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03450b07ee96e6620800000000000000
-      internalID: 2769267293693170736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_near_2
-      rect:
-        serializedVersion: 2
-        x: 1517
-        y: 0
-        width: 311
-        height: 541
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3482939133fe433e0800000000000000
-      internalID: -2074770525565409213
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_near_3
-      rect:
-        serializedVersion: 2
-        x: 1943
-        y: 0
-        width: 151
-        height: 483
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d719331e8c951bd70800000000000000
-      internalID: 9057119044925362557
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_near_4
-      rect:
-        serializedVersion: 2
-        x: 2197
-        y: 0
-        width: 341
-        height: 531
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd9139c25953ff0d0800000000000000
-      internalID: -3386929479945086501
+      spriteID: ca368721c0c3a2610800000000000000
+      internalID: 1597155040403415980
       vertices: []
       indices: 
       edges: []
@@ -238,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e5de5fed391b036498667b11f5b39674
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      background_near_0: -885321726135238226
-      background_near_1: 2769267293693170736
-      background_near_2: -2074770525565409213
-      background_near_3: 9057119044925362557
-      background_near_4: -3386929479945086501
+      Brick_Platform_0: 1597155040403415980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
