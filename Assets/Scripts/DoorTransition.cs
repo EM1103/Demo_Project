@@ -4,33 +4,34 @@ using System.Collections;
 
 public class DoorTransition : MonoBehaviour
 {
-    public Transform outsideCameraPosition; // New camera position
-    public Image fadeScreen; // UI Image for fade effect
-    public float fadeSpeed = 1f; // Speed of fade effect
+    public Transform newCameraAnchor; // Target anchor
+    public Vector2 newMinOffset, newMaxOffset; // New swipe limits relative to the anchor
+    public Image fadeScreen;
+    public float fadeSpeed = 1f;
 
-    private Camera mainCamera;
-
-    void Start()
-    {
-        mainCamera = Camera.main;
-        fadeScreen.gameObject.SetActive(true); // Ensure fade screen is active
-    }
+    private bool isTransitioning = false;
 
     void OnMouseDown()
     {
-        StartCoroutine(FadeAndTeleport());
+        if (!isTransitioning)
+            StartCoroutine(FadeAndMoveAnchor());
     }
 
-    IEnumerator FadeAndTeleport()
+    IEnumerator FadeAndMoveAnchor()
     {
+        isTransitioning = true;
+
         // Step 1: Fade to Black
         yield return StartCoroutine(Fade(1));
 
-        // Step 2: Instantly move the camera
-        mainCamera.transform.position = outsideCameraPosition.position;
+        // Step 2: Move the Camera Anchor and Update Limits
+        CameraController cameraController = GameObject.Find("CameraAnchor").GetComponent<CameraController>();
+        cameraController.SetAnchor(newCameraAnchor, newMinOffset, newMaxOffset);
 
         // Step 3: Fade Back In
         yield return StartCoroutine(Fade(0));
+
+        isTransitioning = false;
     }
 
     IEnumerator Fade(float targetAlpha)
