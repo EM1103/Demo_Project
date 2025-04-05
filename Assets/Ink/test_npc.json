@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[{"->":"Intro"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"Intro":[["^Hello, traveler!","\n","ev","str","^Hello!","/str","/ev",{"*":".^.c-0","flg":4},{"c-0":["^ It's nice to meet you.","\n","end",{"#f":5}]}],{"#f":1}],"#f":1}],"listDefs":{}}
