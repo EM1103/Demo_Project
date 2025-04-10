@@ -37,6 +37,10 @@ public class DialogueManager : MonoBehaviour
     public void EnterDialogueMode(TextAsset inkJSON)
     {
         currentStory = new Story(inkJSON.text);
+
+        // Inject player stats
+        currentStory.variablesState["empathy"] = PlayerStats.Instance.empathy;
+        
         IsDialoguePlaying = true;
         dialoguePanel.SetActive(true);
         ContinueStory();
