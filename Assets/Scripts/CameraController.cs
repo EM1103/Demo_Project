@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Vector2 minOffset, maxOffset; // Limits relative to the anchor
-    private Transform currentAnchor;
+    private Anchor currentAnchor;
 
     public float swipeSpeed = 0.5f;
     private Vector3 touchStart;
@@ -13,15 +12,19 @@ public class CameraController : MonoBehaviour
     {
         if (currentAnchor == null)
         {
-            currentAnchor = transform; // Default to itself
+            currentAnchor = GetComponentInParent<Anchor>(); // fallback (can still be null)
         }
 
-        // Apply the initial position and limits
-        ApplyLimits();
+        if (currentAnchor != null)
+        {
+            SnapToAnchor(currentAnchor);
+        }
     }
 
     void Update()
     {
+        if (currentAnchor == null) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -34,9 +37,13 @@ public class CameraController : MonoBehaviour
             Vector3 movement = touchStart - touchEnd;
             Vector3 newPosition = transform.position + movement * swipeSpeed;
 
-            // Apply limits relative to the current anchor
-            newPosition.x = Mathf.Clamp(newPosition.x, currentAnchor.position.x + minOffset.x, currentAnchor.position.x + maxOffset.x);
-            newPosition.y = Mathf.Clamp(newPosition.y, currentAnchor.position.y + minOffset.y, currentAnchor.position.y + maxOffset.y);
+            // Clamp movement to the anchor's defined limits
+            Vector2 minOffset = currentAnchor.minOffset;
+            Vector2 maxOffset = currentAnchor.maxOffset;
+            Vector3 anchorPos = currentAnchor.transform.position;
+
+            newPosition.x = Mathf.Clamp(newPosition.x, anchorPos.x + minOffset.x, anchorPos.x + maxOffset.x);
+            newPosition.y = Mathf.Clamp(newPosition.y, anchorPos.y + minOffset.y, anchorPos.y + maxOffset.y);
 
             transform.position = newPosition;
         }
@@ -47,24 +54,9 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    // Method to change the anchor and update limits
-    public void SetAnchor(Transform newAnchor, Vector2 newMinOffset, Vector2 newMaxOffset)
+    public void SnapToAnchor(Anchor newAnchor)
     {
         currentAnchor = newAnchor;
-        minOffset = newMinOffset;
-        maxOffset = newMaxOffset;
-        transform.position = currentAnchor.position; // Snap to new anchor
-        ApplyLimits();
-    }
-
-    // Ensures limits are applied correctly
-    private void ApplyLimits()
-    {
-        Vector3 clampedPosition = transform.position;
-
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, currentAnchor.position.x + minOffset.x, currentAnchor.position.x + maxOffset.x);
-        clampedPosition.y = Mathf.Clamp(clampedPosition.y, currentAnchor.position.y + minOffset.y, currentAnchor.position.y + maxOffset.y);
-
-        transform.position = clampedPosition;
+        transform.position = newAnchor.transform.position;
     }
 }

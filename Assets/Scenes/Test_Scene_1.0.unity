@@ -296,9 +296,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 507297939}
+  - component: {fileID: 507297940}
   - component: {fileID: 507297942}
   - component: {fileID: 507297941}
-  - component: {fileID: 507297940}
   m_Layer: 0
   m_Name: Door || To Backroom
   m_TagString: Untagged
@@ -333,9 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21578827a965274283abf42f2db62ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCameraAnchor: {fileID: 815788352}
-  newMinOffset: {x: 0, y: 0}
-  newMaxOffset: {x: 0, y: 0}
+  targetAnchor: {fileID: 815788353}
   fadeScreen: {fileID: 254957564}
   fadeSpeed: 2
 --- !u!61 &507297941
@@ -1546,7 +1544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797992337}
   m_Layer: 0
-  m_Name: 1st room
+  m_Name: Storage
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1566,7 +1564,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1810058180}
-  - {fileID: 1654597943}
   - {fileID: 507297939}
   - {fileID: 871133989}
   - {fileID: 1492196809}
@@ -1582,8 +1579,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 815788352}
+  - component: {fileID: 815788353}
   m_Layer: 0
-  m_Name: Anchor || For 1st room door
+  m_Name: Anchor || Backroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1604,6 +1602,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1250659209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &815788353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815788351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e061611f929984f9414bf3ed8d9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minOffset: {x: 0, y: 0}
+  maxOffset: {x: 0, y: 0}
 --- !u!1 &871133988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,9 +1763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21578827a965274283abf42f2db62ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCameraAnchor: {fileID: 1666170920}
-  newMinOffset: {x: 3, y: 0}
-  newMaxOffset: {x: 18, y: 0}
+  targetAnchor: {fileID: 0}
   fadeScreen: {fileID: 254957564}
   fadeSpeed: 2
 --- !u!1 &874735151
@@ -2184,9 +2194,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1081908051}
+  - component: {fileID: 1081908052}
   - component: {fileID: 1081908054}
   - component: {fileID: 1081908053}
-  - component: {fileID: 1081908052}
   m_Layer: 0
   m_Name: Door || To 1st room
   m_TagString: Untagged
@@ -2221,9 +2231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21578827a965274283abf42f2db62ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCameraAnchor: {fileID: 1810058180}
-  newMinOffset: {x: 3, y: 0}
-  newMaxOffset: {x: 18, y: 0}
+  targetAnchor: {fileID: 1810058181}
   fadeScreen: {fileID: 254957564}
   fadeSpeed: 2
 --- !u!61 &1081908053
@@ -2895,9 +2903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21578827a965274283abf42f2db62ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newCameraAnchor: {fileID: 1654597943}
-  newMinOffset: {x: -18, y: 0}
-  newMaxOffset: {x: 2, y: 0}
+  targetAnchor: {fileID: 0}
   fadeScreen: {fileID: 254957564}
   fadeSpeed: 2
 --- !u!61 &1534242943
@@ -3046,8 +3052,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ec39508ff473c428a2f301cc9ace50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minOffset: {x: 0, y: 0}
-  maxOffset: {x: 0, y: 0}
   swipeSpeed: 0.05
 --- !u!1 &1607547655
 GameObject:
@@ -3683,37 +3687,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1654597942
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1654597943}
-  m_Layer: 0
-  m_Name: Anchor || Hallway door
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1654597943
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654597942}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 797992337}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1666170919
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,8 +3772,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1810058180}
+  - component: {fileID: 1810058181}
   m_Layer: 0
-  m_Name: Anchor || Backroom door
+  m_Name: Anchor || Storage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3815,12 +3789,26 @@ Transform:
   m_GameObject: {fileID: 1810058179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 797992337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810058181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810058179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e061611f929984f9414bf3ed8d9f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minOffset: {x: -8, y: 0}
+  maxOffset: {x: 8, y: 0}
 --- !u!1 &1857884981
 GameObject:
   m_ObjectHideFlags: 0
