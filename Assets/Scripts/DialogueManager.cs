@@ -44,6 +44,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.variablesState["defiance"] = PlayerStats.Instance.defiance;
         currentStory.variablesState["resolve"] = PlayerStats.Instance.resolve;
         currentStory.variablesState["corruption"] = PlayerStats.Instance.corruption;
+
+        // Inject inventroy stats
+        currentStory.variablesState["p_hasbook"] = PlayerStats.Instance.p_hasbook;
         
         IsDialoguePlaying = true;
         dialoguePanel.SetActive(true);
@@ -94,6 +97,7 @@ public class DialogueManager : MonoBehaviour
         PlayerStats.Instance.defiance = (int)currentStory.variablesState["defiance"];
         PlayerStats.Instance.resolve = (int)currentStory.variablesState["resolve"];
         PlayerStats.Instance.corruption = (int)currentStory.variablesState["corruption"];
+        PlayerStats.Instance.p_hasbook = (int)currentStory.variablesState["p_hasbook"];        
 
         currentStory = null;
     }

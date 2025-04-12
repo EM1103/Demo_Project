@@ -3,6 +3,7 @@ VAR curiosity = 0
 VAR defiance = 0
 VAR resolve = 0
 VAR corruption = 0
+VAR p_hasbook = 0
 
 -> mikul_intro
 === mikul_intro ===
