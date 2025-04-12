@@ -3,7 +3,13 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats Instance;
-    public int empathy = 2; // You can tweak this to test
+
+    // Core stats
+    public int empathy = 2;
+    public int curiosity = 0;
+    public int defiance = 0;
+    public int resolve = 5;
+    public int corruption = 0;
 
     void Awake()
     {
