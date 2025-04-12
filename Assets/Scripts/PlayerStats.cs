@@ -12,8 +12,8 @@ public class PlayerStats : MonoBehaviour
     public int resolve = 5;
     public int corruption = 0;
 
-    // Inventory stats
-    public int p_hasbook = 0;
+    // Chapter keys
+    public int p_key = 0;
 
     void Awake()
     {

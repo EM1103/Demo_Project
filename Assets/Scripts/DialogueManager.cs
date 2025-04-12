@@ -45,8 +45,8 @@ public class DialogueManager : MonoBehaviour
         currentStory.variablesState["resolve"] = PlayerStats.Instance.resolve;
         currentStory.variablesState["corruption"] = PlayerStats.Instance.corruption;
 
-        // Inject inventroy stats
-        currentStory.variablesState["p_hasbook"] = PlayerStats.Instance.p_hasbook;
+        // Inject chapter keys
+        currentStory.variablesState["p_key"] = PlayerStats.Instance.p_key;
         
         IsDialoguePlaying = true;
         dialoguePanel.SetActive(true);
@@ -97,7 +97,9 @@ public class DialogueManager : MonoBehaviour
         PlayerStats.Instance.defiance = (int)currentStory.variablesState["defiance"];
         PlayerStats.Instance.resolve = (int)currentStory.variablesState["resolve"];
         PlayerStats.Instance.corruption = (int)currentStory.variablesState["corruption"];
-        PlayerStats.Instance.p_hasbook = (int)currentStory.variablesState["p_hasbook"];        
+
+        // Sync updated Ink values back to the chapter keys in PlayerStats
+        PlayerStats.Instance.p_key = (int)currentStory.variablesState["p_key"];        
 
         currentStory = null;
     }
