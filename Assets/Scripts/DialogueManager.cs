@@ -40,6 +40,10 @@ public class DialogueManager : MonoBehaviour
 
         // Inject player stats
         currentStory.variablesState["empathy"] = PlayerStats.Instance.empathy;
+        currentStory.variablesState["curiosity"] = PlayerStats.Instance.curiosity;
+        currentStory.variablesState["defiance"] = PlayerStats.Instance.defiance;
+        currentStory.variablesState["resolve"] = PlayerStats.Instance.resolve;
+        currentStory.variablesState["corruption"] = PlayerStats.Instance.corruption;
         
         IsDialoguePlaying = true;
         dialoguePanel.SetActive(true);
@@ -83,6 +87,14 @@ public class DialogueManager : MonoBehaviour
         IsDialoguePlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+
+        // Sync updated Ink values back to PlayerStats
+        PlayerStats.Instance.empathy = (int)currentStory.variablesState["empathy"];
+        PlayerStats.Instance.curiosity = (int)currentStory.variablesState["curiosity"];
+        PlayerStats.Instance.defiance = (int)currentStory.variablesState["defiance"];
+        PlayerStats.Instance.resolve = (int)currentStory.variablesState["resolve"];
+        PlayerStats.Instance.corruption = (int)currentStory.variablesState["corruption"];
+
         currentStory = null;
     }
 }
