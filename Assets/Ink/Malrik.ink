@@ -12,7 +12,7 @@ An old man appears to be locked behind a cell.
         { random_choice == 2:
             MALRIK: I don't recall seeing you before.
         }
-        MALRIK: Listen, something wrong here.
+        MALRIK: Listen, something is wrong here.
         MALRIK: I've heard people were going missing.
         ~temp random_choice_1 = RANDOM(1,2)
         { random_choice == 1: 

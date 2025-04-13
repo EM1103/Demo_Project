@@ -15,7 +15,7 @@ public class StatLockedDoor : MonoBehaviour
 
     [Header("Warning Message UI")]
     public TMP_Text warningText;
-    public float messageFadeDuration = 2f; // Seconds to show the warning before fading
+    public float messageFadeDuration = 2f; 
 
     private bool isTransitioning = false;
 
@@ -68,7 +68,7 @@ public class StatLockedDoor : MonoBehaviour
 
         warningText.text = message;
         warningText.alpha = 1f;
-        StopAllCoroutines(); // Stop previous fade if still running
+        StopAllCoroutines(); 
         StartCoroutine(FadeOutText());
     }
 

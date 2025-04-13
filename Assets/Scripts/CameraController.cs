@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     {
         if (currentAnchor == null)
         {
-            currentAnchor = GetComponentInParent<Anchor>(); // fallback (can still be null)
+            currentAnchor = GetComponentInParent<Anchor>(); 
         }
 
         if (currentAnchor != null)
@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
             Vector3 movement = touchStart - touchEnd;
             Vector3 newPosition = transform.position + movement * swipeSpeed;
 
-            // Clamp movement to the anchor's defined limits
+            
             Vector2 minOffset = currentAnchor.minOffset;
             Vector2 maxOffset = currentAnchor.maxOffset;
             Vector3 anchorPos = currentAnchor.transform.position;
