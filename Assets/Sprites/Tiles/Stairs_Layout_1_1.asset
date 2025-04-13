@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stairs_Layout_1_1
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -6567272905018258447, guid: 652a2f0329204de45b0d34fbbd90a4b6, type: 3}
-  m_Color: {r: 0.7372549, g: 0.6666667, b: 0.3254902, a: 1}
+  m_Color: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
   m_Transform:
     e00: 1
     e01: 0

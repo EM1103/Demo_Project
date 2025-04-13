@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Stairs_Layout_2
+  m_Name: Tile_Floor_Layout_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -2553021647008243459, guid: ad98882dcd6167d4b8f01bf3d71420e3, type: 3}
-  m_Color: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
+  m_Sprite: {fileID: -2209840934689647248, guid: 694b5918f8e6532458c3a8e52f17b426, type: 3}
+  m_Color: {r: 0.15294118, g: 0.15294118, b: 0.15294118, a: 1}
   m_Transform:
     e00: 1
     e01: 0

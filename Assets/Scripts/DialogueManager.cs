@@ -52,6 +52,9 @@ public class DialogueManager : MonoBehaviour
         currentStory.variablesState["key_3"] = PlayerStats.Instance.key_3;
         currentStory.variablesState["key_4"] = PlayerStats.Instance.key_4;
         currentStory.variablesState["key_5"] = PlayerStats.Instance.key_5;
+
+        // Inject inventory stats
+        currentStory.variablesState["search_1"] = PlayerStats.Instance.search_1;
         
         IsDialoguePlaying = true;
         dialoguePanel.SetActive(true);
@@ -110,6 +113,9 @@ public class DialogueManager : MonoBehaviour
         PlayerStats.Instance.key_3 = (int)currentStory.variablesState["key_3"];
         PlayerStats.Instance.key_4 = (int)currentStory.variablesState["key_4"];
         PlayerStats.Instance.key_5 = (int)currentStory.variablesState["key_5"];    
+
+        // Sync updated Ink values back to the inventory stats in PlayerStats
+        PlayerStats.Instance.search_1 = (int)currentStory.variablesState["search_1"];
 
         currentStory = null;
     }

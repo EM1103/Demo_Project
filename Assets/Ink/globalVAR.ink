@@ -12,3 +12,6 @@ VAR key_2 = 0
 VAR key_3 = 0
 VAR key_4 = 0
 VAR key_5 = 0
+
+// Inventory keys
+VAR search_1 = 0

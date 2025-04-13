@@ -14,13 +14,17 @@ public class PlayerStats : MonoBehaviour
     public int corruption = 0;
 
     // Chapter keys
-    [Header("Chaptere Keys")]
+    [Header("Chapter Keys")]
     public int key_p = 0;
     public int key_1 = 0;
     public int key_2 = 0;
     public int key_3 = 0;
     public int key_4 = 0;
     public int key_5 = 0;
+
+    // Inventory stats
+    [Header("Inventory stats")]
+    public int search_1 = 0;
 
     void Awake()
     {
