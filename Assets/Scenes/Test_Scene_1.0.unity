@@ -709,10 +709,16 @@ MonoBehaviour:
   targetAnchor: {fileID: 586316051}
   fadeScreen: {fileID: 254957564}
   fadeSpeed: 2
-  requiredStat: curiosity
-  requiredValue: 5
+  requiredStat: key_p
+  requiredValue: 1
   warningText: {fileID: 701904004}
-  messageFadeDuration: 2
+  messageFadeDuration: 1
+  insufficientStatMessages:
+  - The door won't budge...
+  - Something is missing...
+  - You are missing something...
+  - The door won't move.
+  - Not yet.
 --- !u!1 &120103988
 GameObject:
   m_ObjectHideFlags: 0
@@ -9025,7 +9031,12 @@ MonoBehaviour:
   defiance: 0
   resolve: 5
   corruption: 0
-  p_key: 0
+  key_p: 0
+  key_1: 0
+  key_2: 0
+  key_3: 0
+  key_4: 0
+  key_5: 0
 --- !u!4 &1750559428
 Transform:
   m_ObjectHideFlags: 0

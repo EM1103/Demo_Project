@@ -46,7 +46,12 @@ public class DialogueManager : MonoBehaviour
         currentStory.variablesState["corruption"] = PlayerStats.Instance.corruption;
 
         // Inject chapter keys
-        currentStory.variablesState["p_key"] = PlayerStats.Instance.p_key;
+        currentStory.variablesState["key_p"] = PlayerStats.Instance.key_p;
+        currentStory.variablesState["key_1"] = PlayerStats.Instance.key_1;
+        currentStory.variablesState["key_2"] = PlayerStats.Instance.key_2;
+        currentStory.variablesState["key_3"] = PlayerStats.Instance.key_3;
+        currentStory.variablesState["key_4"] = PlayerStats.Instance.key_4;
+        currentStory.variablesState["key_5"] = PlayerStats.Instance.key_5;
         
         IsDialoguePlaying = true;
         dialoguePanel.SetActive(true);
@@ -99,7 +104,12 @@ public class DialogueManager : MonoBehaviour
         PlayerStats.Instance.corruption = (int)currentStory.variablesState["corruption"];
 
         // Sync updated Ink values back to the chapter keys in PlayerStats
-        PlayerStats.Instance.p_key = (int)currentStory.variablesState["p_key"];        
+        PlayerStats.Instance.key_p = (int)currentStory.variablesState["key_p"];    
+        PlayerStats.Instance.key_1 = (int)currentStory.variablesState["key_1"];
+        PlayerStats.Instance.key_2 = (int)currentStory.variablesState["key_2"];
+        PlayerStats.Instance.key_3 = (int)currentStory.variablesState["key_3"];
+        PlayerStats.Instance.key_4 = (int)currentStory.variablesState["key_4"];
+        PlayerStats.Instance.key_5 = (int)currentStory.variablesState["key_5"];    
 
         currentStory = null;
     }

@@ -10,8 +10,8 @@ public class StatLockedDoor : MonoBehaviour
     public float fadeSpeed = 1f;
 
     [Header("Stat Requirement")]
-    public string requiredStat = "curiosity";
-    public int requiredValue = 5;
+    public string requiredStat = "";
+    public int requiredValue = 0;
 
     [Header("Warning Message UI")]
     public TMP_Text warningText;
@@ -19,13 +19,24 @@ public class StatLockedDoor : MonoBehaviour
 
     private bool isTransitioning = false;
 
+    [TextArea]
+    public string[] insufficientStatMessages = new string[]
+    {
+        "The door won't budge...",
+        "Something is missing...",
+        "You are missing something...",
+        "The door won't move.",
+        "Not yet."
+    };
+
     void OnMouseDown()
     {
         if (isTransitioning) return;
 
         if (!MeetsStatRequirement())
         {
-            ShowWarning("You need more " + requiredStat + " to go through.");
+            string randomMessage = insufficientStatMessages[Random.Range(0, insufficientStatMessages.Length)];
+            ShowWarning(randomMessage);
             return;
         }
 
@@ -36,11 +47,19 @@ public class StatLockedDoor : MonoBehaviour
     {
         switch (requiredStat.ToLower())
         {
+            // For core stats
             case "empathy": return PlayerStats.Instance.empathy >= requiredValue;
             case "curiosity": return PlayerStats.Instance.curiosity >= requiredValue;
             case "defiance": return PlayerStats.Instance.defiance >= requiredValue;
             case "resolve": return PlayerStats.Instance.resolve >= requiredValue;
             case "corruption": return PlayerStats.Instance.corruption >= requiredValue;
+            // For chapter keys
+            case "key_p": return PlayerStats.Instance.key_p >= requiredValue;
+            case "key_1": return PlayerStats.Instance.key_1 >= requiredValue;
+            case "key_2": return PlayerStats.Instance.key_2 >= requiredValue;
+            case "key_3": return PlayerStats.Instance.key_3 >= requiredValue;
+            case "key_4": return PlayerStats.Instance.key_4 >= requiredValue;
+            case "key_5": return PlayerStats.Instance.key_5 >= requiredValue;
             default:
                 Debug.LogWarning("Unknown stat: " + requiredStat);
                 return false;

@@ -1,10 +1,4 @@
-VAR empathy = 0
-VAR curiosity = 0
-VAR defiance = 0
-VAR resolve = 0
-VAR corruption = 0
-
-VAR p_key = 0
+INCLUDE globalVAR.ink
 
 -> malrik_intro
 === malrik_intro ===
