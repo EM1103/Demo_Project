@@ -15,3 +15,6 @@ VAR key_5 = 0
 
 // Inventory keys
 VAR search_1 = 0
+VAR journal = 0
+VAR flyer = 0
+VAR amulet = 0

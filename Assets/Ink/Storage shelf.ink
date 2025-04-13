@@ -21,16 +21,19 @@ INCLUDE globalVAR.ink
     ~temp random = RANDOM(1,3)
     { random == 1:
         ~ curiosity += 1
+        ~ journal += 1
         You find a book.
         It appears to be a journal.
     }
     { random == 2:
         ~ resolve += 1
+        ~ flyer += 1
         You find a piece of paper.
         It appears to be a motivational flyer.
     }
     { random == 3:
         ~ corruption += 1
+        ~ amulet += 1
         You find an amulet.
         You feel something strange in your chest when you pick it up.
     }

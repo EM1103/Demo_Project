@@ -22,11 +22,7 @@ public class StatLockedDoor : MonoBehaviour
     [TextArea]
     public string[] insufficientStatMessages = new string[]
     {
-        "The door won't budge...",
-        "Something is missing...",
-        "You are missing something...",
-        "The door won't move.",
-        "Not yet."
+        "This isn't working."
     };
 
     void OnMouseDown()

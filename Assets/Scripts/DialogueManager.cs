@@ -55,6 +55,9 @@ public class DialogueManager : MonoBehaviour
 
         // Inject inventory stats
         currentStory.variablesState["search_1"] = PlayerStats.Instance.search_1;
+        currentStory.variablesState["journal"] = PlayerStats.Instance.journal;
+        currentStory.variablesState["flyer"] = PlayerStats.Instance.flyer;
+        currentStory.variablesState["amulet"] = PlayerStats.Instance.amulet;
         
         IsDialoguePlaying = true;
         dialoguePanel.SetActive(true);
@@ -116,6 +119,9 @@ public class DialogueManager : MonoBehaviour
 
         // Sync updated Ink values back to the inventory stats in PlayerStats
         PlayerStats.Instance.search_1 = (int)currentStory.variablesState["search_1"];
+        PlayerStats.Instance.journal = (int)currentStory.variablesState["journal"];
+        PlayerStats.Instance.flyer = (int)currentStory.variablesState["flyer"];
+        PlayerStats.Instance.amulet = (int)currentStory.variablesState["amulet"];
 
         currentStory = null;
     }

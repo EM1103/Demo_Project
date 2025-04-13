@@ -25,6 +25,9 @@ public class PlayerStats : MonoBehaviour
     // Inventory stats
     [Header("Inventory stats")]
     public int search_1 = 0;
+    public int journal = 0;
+    public int flyer = 0;
+    public int amulet = 0;
 
     void Awake()
     {
