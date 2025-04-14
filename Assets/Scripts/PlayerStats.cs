@@ -7,10 +7,10 @@ public class PlayerStats : MonoBehaviour
 
     // Core stats
     [Header("Core Stats")]
-    public int empathy = 2;
+    public int empathy = 0;
     public int curiosity = 0;
     public int defiance = 0;
-    public int resolve = 5;
+    public int resolve = 0;
     public int corruption = 0;
 
     // Chapter keys

@@ -6804,7 +6804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620425051}
   m_Layer: 0
-  m_Name: "\U0001F7E9 Chapter 2 \u2013 The Broken Tower"
+  m_Name: "\U0001F7E9 Chapter 2 \u2013  Catacombs"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22869,10 +22869,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca7ebdf66153984fa3ad4d444549afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  empathy: 2
+  empathy: 0
   curiosity: 0
   defiance: 0
-  resolve: 5
+  resolve: 0
   corruption: 0
   key_p: 0
   key_1: 0
